@@ -1,0 +1,22 @@
+# Dockerfile.bearcar
+
+ARG BASE_IMAGE
+FROM ${BASE_IMAGE}
+
+### My Changes
+# Install Correct Numpy Version for OpenCV
+RUN pip install "numpy<2.0.0"
+### My Changes
+
+### My Changes
+# Install ROS packages
+RUN --mount=type=cache,target=/var/cache/apt \
+apt-get update && apt-get install -y \
+    ros-humble-joint-state-publisher-gui \
+    ros-humble-xacro \
+    ros-humble-tf-transformations
+### My Changes
+
+### My Changes
+RUN python3 -m pip install transforms3d
+### My Changes

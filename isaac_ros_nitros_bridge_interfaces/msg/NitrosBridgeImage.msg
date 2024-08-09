@@ -4,5 +4,5 @@ uint32 width
 string encoding
 uint8 is_bigendian
 uint32 step
-# Filled with PID and file descriptor(exported from GPU memory)
-int32[] data
+# Filled with CUDA IPC Handle points to the GPU data
+uint8[] data

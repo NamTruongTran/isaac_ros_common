@@ -12,6 +12,19 @@
 echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> ~/.bashrc
 source /opt/ros/${ROS_DISTRO}/setup.bash
 
+### My Changes
+echo "alias vslam_go='ros2 launch isaac_ros_visual_slam isaac_ros_visual_slam_realsense.launch.py'" >> ~/.bashrc
+echo "alias keypoints='ros2 run keypoints_visualizer vslam_sim'" >> ~/.bashrc
+echo "alias sr='source /workspaces/isaac_ros-dev/install/setup.bash && echo \"The isaac_ros-dev workspace was sourced successfully.\"'" >> ~/.bashrc
+
+echo "source /workspaces/isaac_ros-dev/install/setup.bash" >> ~/.bashrc
+echo "alias cb='colcon build --symlink-install'" >> ~/.bashrc
+echo "alias cs='clear'" >> ~/.bashrc
+### My Changes
+
+sudo apt-get update
+rosdep update
+
 # Restart udev daemon
 sudo service udev restart
 
